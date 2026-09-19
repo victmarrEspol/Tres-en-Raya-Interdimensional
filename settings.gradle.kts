@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Estructuras Grupo_01"
+rootProject.name = "Tres en Raya Interdimensional"
 include(":app")
  

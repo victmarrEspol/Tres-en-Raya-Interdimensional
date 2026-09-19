@@ -8,20 +8,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.activity.EdgeToEdge;
 
 public class MenuActivity extends AppCompatActivity {
-
     private Button modo1vs1;
     private Button modo1vsMaquina;
+    private Button modo1vsMaquinaRandom;
+    private Button modo1vsMaquinaInvincible;
+    private Button activity_versus;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.menu);
 
-        modo1vs1 = findViewById(R.id.modo1vs1); // Captura el click
 
-        modo1vs1.setOnClickListener(v -> { //Cambio de actividad (pantalla)
-            Intent intent = new Intent(MenuActivity.this, TableroActivity.class);
-            intent.putExtra("modo", "1vs1"); // Enviar información de qué modalidad se ha elegido
+        activity_versus = findViewById(R.id.modo1vs1);
+
+        activity_versus.setOnClickListener(V -> {
+            Intent intent = new Intent(MenuActivity.this, versusActivity.class);
             startActivity(intent);
         });
 
@@ -30,10 +32,23 @@ public class MenuActivity extends AppCompatActivity {
 
         modo1vsMaquina.setOnClickListener(v -> { //Cambio de actividad (pantalla)
             Intent intent = new Intent(MenuActivity.this, TableroActivity.class);
-            intent.putExtra("modo", "1vsMaquina"); // Enviar información de qué modalidad se ha elegido
             startActivity(intent);
         });
 
 
+        modo1vsMaquinaRandom = findViewById(R.id.modo1vsMaquinaRandom);
+
+        modo1vsMaquinaRandom.setOnClickListener(v -> { //Cambio de actividad (pantalla)
+            Intent intent = new Intent(MenuActivity.this, TableroRandomActivity.class);
+            startActivity(intent);
+        });
+
+
+        modo1vsMaquinaInvincible = findViewById(R.id.modo1vsMaquinaInvincible);
+
+        modo1vsMaquinaInvincible.setOnClickListener(v -> { //Cambio de actividad (pantalla)
+            Intent intent = new Intent(MenuActivity.this, TableroInvincibleActivity.class);
+            startActivity(intent);
+        });
     }
 }

@@ -108,13 +108,8 @@ public class Tree<E> {
         return listaEstados;
     }
 
-    public int calcularUtilidad(
-            Table t,
-            char simboloMaquina,
-            char simboloOponente){
-
-        return contarLineasDisponibles(t, simboloMaquina)
-                - contarLineasDisponibles(t, simboloOponente);
+    public int calcularUtilidad(Table t, char simboloMaquina, char simboloOponente){
+        return contarLineasDisponibles(t, simboloMaquina) - contarLineasDisponibles(t, simboloOponente);
     }
 
     private int contarLineasDisponibles(Table t, char jugador){

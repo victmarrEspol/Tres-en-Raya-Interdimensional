@@ -5,14 +5,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3699B5">
+    android:background="@drawable/fondotresenrayainterdimensional">
+
+
 
     <TextView
         android:id="@+id/titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="--Tres en Raya--"
+        android:text="--Tres en Raya--\ninterdimensional"
         android:textColor="#FFFFFF"
         android:textSize="50sp"
         android:textStyle="bold"
@@ -26,56 +28,79 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="¡Elige el modo de juego para empezar!"
+        android:text="Jugadores de todas las dimensiones están ansiosos por unas partidas. ¡Elige contra quién deseas jugar!"
         android:textColor="#FFFFFF"
-        android:textSize="25sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         android:layout_marginTop="20dp"
         app:layout_constraintTop_toBottomOf="@id/titulo"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/opciones"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:layout_marginTop="25dp"
-        app:layout_constraintTop_toBottomOf="@id/subtitulo"
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:translationY="200dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            android:id="@+id/modo1vs1"
-            android:layout_width="246dp"
-            android:layout_height="68dp"
-            android:layout_margin="15dp"
-            android:backgroundTint="#313244"
-            android:text="1 vs 1"
-            android:textSize="25sp" />
+        <LinearLayout
+            android:id="@+id/opciones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:translationY="30dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@id/subtitulo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            android:id="@+id/modo1vsMaquina"
-            android:layout_width="246dp"
-            android:layout_height="68dp"
-            android:layout_margin="15dp"
-            android:backgroundTint="#313244"
-            android:text="1 vs 🤖"
-            android:textSize="25sp" />
+            <Button
+                android:id="@+id/modo1vs1"
+                android:layout_width="246dp"
+                android:layout_height="68dp"
+                android:layout_margin="15dp"
+                android:backgroundTint="#313244"
+                android:text="1 vs 1"
+                android:textSize="25sp" />
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/modo1vsMaquina"
+                android:layout_width="246dp"
+                android:layout_height="68dp"
+                android:layout_margin="15dp"
+                android:backgroundTint="#313244"
+                android:text="1 vs Eyestree"
+                android:textSize="25sp" />
 
-    <ImageView
-        android:layout_width="230dp"
-        android:layout_height="130dp"
-        android:translationY="-50dp"
-        android:src="@drawable/tres_en_raya"
-        android:contentDescription="Tres en raya"
-        android:layout_marginTop="30dp"
-        app:layout_constraintTop_toBottomOf="@id/opciones"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+            <Button
+                android:id="@+id/modo1vsMaquinaRandom"
+                android:layout_width="246dp"
+                android:layout_height="68dp"
+                android:layout_margin="15dp"
+                android:backgroundTint="#313244"
+                android:text="1 vs Randomizer"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/modo1vsMaquinaInvincible"
+                android:layout_width="246dp"
+                android:layout_height="68dp"
+                android:layout_margin="15dp"
+                android:backgroundTint="#313244"
+                android:text="1 vs Betsy"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
